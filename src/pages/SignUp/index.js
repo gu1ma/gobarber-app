@@ -14,13 +14,20 @@ import {
 
 import Background from '~/components/Background';
 
-export default function SignIn({navigation}) {
+export default function SignUp({navigation}) {
   return (
     <Background>
       <Container>
         <Image source={logo} />
 
         <Form>
+          <FormInput
+            icon="person-outline"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Nome completo"
+          />
+
           <FormInput
             icon="mail-outline"
             keyboardType="email-address"
@@ -39,9 +46,9 @@ export default function SignIn({navigation}) {
 
           <SignLink
             onPress={() => {
-              navigation.navigate('SignUp');
+              navigation.navigate('SignIn');
             }}>
-            <SignLinkText>Criar conta gratuitamente</SignLinkText>
+            <SignLinkText>Já tem conta? Efetue o login</SignLinkText>
           </SignLink>
         </Form>
       </Container>

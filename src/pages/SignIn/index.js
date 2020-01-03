@@ -1,24 +1,47 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Image} from 'react-native';
 
-// import { Container } from './styles';
+import logo from '~/assets/logo.png';
+
+import {
+  Container,
+  Form,
+  FormInput,
+  SubmitButton,
+  SignLink,
+  SignLinkText,
+} from './styles';
 
 import Background from '~/components/Background';
-import Input from '~/components/Input';
-import Button from '~/components/Button';
 
 export default function SignIn() {
   return (
     <Background>
-      <Text>Oloko meu</Text>
+      <Container>
+        <Image source={logo} />
 
-      <Input
-        style={{marginTop: 30}}
-        icon="call"
-        placeholder="Digite o seu nome"
-      />
+        <Form>
+          <FormInput
+            icon="mail-outline"
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Digite seu e-mail"
+          />
 
-      <Button>Entrar</Button>
+          <FormInput
+            icon="lock-outline"
+            secureTextEntry
+            placeholder="Digite a sua senha"
+          />
+
+          <SubmitButton onPress={() => {}}>Acessar</SubmitButton>
+
+          <SignLink onPress={() => {}}>
+            <SignLinkText>Criar conta gratuitamente</SignLinkText>
+          </SignLink>
+        </Form>
+      </Container>
     </Background>
   );
 }

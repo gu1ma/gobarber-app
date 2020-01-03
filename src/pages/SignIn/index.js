@@ -17,6 +17,8 @@ import Background from '~/components/Background';
 export default function SignIn({navigation}) {
   const passwordRef = useRef();
 
+  function handleSubmit() {}
+
   return (
     <Background>
       <Container>
@@ -39,9 +41,10 @@ export default function SignIn({navigation}) {
             placeholder="Digite a sua senha"
             ref={passwordRef}
             returnKeyType="send"
+            onSubmitEditing={handleSubmit}
           />
 
-          <SubmitButton onPress={() => {}}>Acessar</SubmitButton>
+          <SubmitButton onPress={handleSubmit}>Acessar</SubmitButton>
 
           <SignLink
             onPress={() => {

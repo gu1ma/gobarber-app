@@ -28,7 +28,7 @@ export function* updateProfile({payload}) {
       'Erro',
       'Houve um problema ao atualizar perfil, confira seus dados!',
     );
-    //yield put(updateProfileFailure());
+    yield put(updateProfileFailure());
   }
 }
 

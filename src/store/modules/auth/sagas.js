@@ -22,8 +22,6 @@ export function* signIn({payload}) {
     }
 
     yield put(signInSuccess(token, user));
-
-    //history.push('dashboard');
   } catch (err) {
     Alert.alert(
       'Falha na autenticação',
@@ -44,14 +42,8 @@ export function* signUp({payload}) {
     });
 
     Alert.alert('Sucesso', 'Conta criada com sucesso');
-    //toast.success('Conta criada com sucesso');
-
-    setTimeout(() => {
-      //history.push('/');
-    }, 2000);
   } catch (err) {
     Alert.alert('Erro', 'Houve um erro ao efetuar o seu cadastro');
-    //toast.error('Houve um erro ao efetuar o seu cadastro');
 
     yield put(signFailure());
   }
@@ -69,13 +61,8 @@ export function setToken({payload}) {
   }
 }
 
-export function signOut() {
-  //history.push('/');
-}
-
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
-  takeLatest('@auth/SIGN_OUT', signOut),
 ]);

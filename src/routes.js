@@ -59,6 +59,7 @@ export default (SignedIn = false) =>
             Profile,
           },
           {
+            resetOnBlur: true,
             tabBarOptions: {
               activeTintColor: '#FFF',
               inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
